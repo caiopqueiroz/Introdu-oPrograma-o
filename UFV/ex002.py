@@ -6,38 +6,18 @@
 # Obs.: Por enquanto, utilize π = 3,1415
 
 
-class Retangulo:
-    def __init__(self, base, altura):
-        self.base = base
-        self.altura = altura
+print('Calculadora da Área de Retângulo')
+base_r = float(input('Base: '))
+altura_r = float(input('Altura: '))
+print(f'A área do retângulo vale {base_r * altura_r}')
+print()
 
-    
-    def area(self):
-        return self.base * self.altura 
-    
+print('Calculadora da Área de Triângulo')
+base_t = float(input('Base: '))
+altura_t = float(input('Altura: '))
+print(f'A área do triângulo vale {(base_t * altura_t) / 2}')
+print()
 
-class Triangulo:
-    def __init__(self, base, altura):
-        self.base = base
-        self.altura = altura
-
-
-    def area(self):
-        return (self.base * self.altura) / 2
-        
-    
-class Circulo:
-    def __init__(self, raio):
-        self.raio = raio
-
-
-    def area(self):
-        return 3.1415 * (self.raio**2)
-
-
-forma1 = Retangulo(5, 5)
-forma2 = Triangulo(5, 5)
-forma3 = Circulo(5)
-print(forma1.area())
-print(forma2.area())
-print(forma3.area())
+print('Calculadora da Área de Círculo')
+raio = float(input('Raio: '))
+print(f'A área do círculo vale {3.1415 * (raio**2)}')
