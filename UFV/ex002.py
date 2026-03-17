@@ -20,4 +20,4 @@ print()
 
 print('Calculadora da Área de Círculo')
 raio = float(input('Raio: '))
-print(f'A área do círculo vale {3.1415 * (raio**2)}')
+print(f'A área do círculo vale {3.1415 * (raio**2):.2f}')

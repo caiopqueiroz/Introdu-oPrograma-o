@@ -2,11 +2,8 @@
 
 
 print('Calculadora de juros')
-print()
 valor = float(input('Valor da conta: '))
-print()
 juros = int(input('Porcentagem de juros: '))
-print()
 acrescimo = valor * (juros / 100)
 final = valor + acrescimo
 print(f'O total de juros que devem ser pagos é R${acrescimo:.2f}. O valor final é R${final:.2f}')

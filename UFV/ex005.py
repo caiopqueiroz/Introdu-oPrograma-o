@@ -3,8 +3,6 @@
 
 
 print('Conversor de °F para °C')
-print()
 valor = int(input('Valor em °F: '))
 c = (valor - 32) / 1.8 
-print()
 print(f'{valor}°F equivalem à {c:.2f}°C')
