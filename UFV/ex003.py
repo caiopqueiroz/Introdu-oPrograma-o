@@ -2,7 +2,9 @@
 
 
 print('Calculadora de Média Aritmética')
+print()
 numeros = list()
 for contador in range(0, 5):
     numeros.append(float(input(f'Digite o {contador + 1}º número: ')))
+    print()
 print(f'A média aritmética desses 5 números é igual a {sum(numeros) / 5}')
