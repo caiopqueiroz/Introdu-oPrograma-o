@@ -6,4 +6,4 @@ valor = float(input('Valor da conta: '))
 juros = int(input('Porcentagem de juros: '))
 acrescimo = valor * (juros / 100)
 final = valor + acrescimo
-print(f'O total de juros que devem ser pagos é R${acrescimo:.2f}. O valor final é R${final:.2f}')
+print(f'O total de juros que devem ser pagos é R${acrescimo:.2f} - Valor final: R${final:.2f}'.replace('.', ','))

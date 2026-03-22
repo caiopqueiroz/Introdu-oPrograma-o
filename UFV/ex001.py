@@ -2,7 +2,6 @@
 
 
 print('Calculadora da expressão f(x) = Kx² + 2x + 5')
-K = 109
 x = float(input('Digite um valor pra x: '))
-resultado = (K * (x**2)) + (2 * x) + 5
-print(f'O resultado é {resultado:.2f}')
+resultado = (109 * x**2) + (2 * x) + 5
+print(f'f(x) vale {resultado:.2f}')

@@ -7,17 +7,17 @@
 
 
 print('Calculadora da Área de Retângulo')
-base_r = float(input('Base: '))
-altura_r = float(input('Altura: '))
-print(f'A área do retângulo vale {base_r * altura_r}')
+base_r = float(input('Base: (cm) '))
+altura_r = float(input('Altura: (cm) '))
+print(f'A área do retângulo vale {base_r * altura_r} cm²')
 print()
 
 print('Calculadora da Área de Triângulo')
-base_t = float(input('Base: '))
-altura_t = float(input('Altura: '))
-print(f'A área do triângulo vale {(base_t * altura_t) / 2}')
+base_t = float(input('Base: (cm) '))
+altura_t = float(input('Altura: (cm) '))
+print(f'A área do triângulo vale {(base_t * altura_t) / 2} cm²')
 print()
 
 print('Calculadora da Área de Círculo')
-raio = float(input('Raio: '))
-print(f'A área do círculo vale {3.1415 * (raio**2):.2f}')
+raio = float(input('Raio: (cm) '))
+print(f'A área do círculo vale {3.1415 * raio**2:.2f} cm²')
