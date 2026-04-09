@@ -27,7 +27,7 @@ if comando1 == 1:
     if nivel == 1:
         print()
         print('Pergunta 1: Qual é a capital do Brasil?\na) Rio de Janeiro\nb) Brasília\nc) São Paulo')
-        resposta = str(input('Resposta: ')).lower()
+        resposta = str(input('Resposta: ')).lower().strip()
         if 'b' in resposta:
             pontos += 10
             print(acerto)
@@ -36,7 +36,7 @@ if comando1 == 1:
 
         print()
         print('Pergunta 2: Quantos dias tem um ano comum?\na) 366\nb) 364\nc) 365')
-        resposta = str(input('Resposta: ')).lower()
+        resposta = str(input('Resposta: ')).lower().strip()
         if 'c' in resposta:
             pontos += 10
             print(acerto)
@@ -45,7 +45,7 @@ if comando1 == 1:
 
         print()
         print('Pergunta 3: Qual o maior planeta do sistema solar?\na) Terra\nb) Júpiter\nc) Saturno')
-        resposta = str(input('Resposta: ')).lower()
+        resposta = str(input('Resposta: ')).lower().strip()
         if 'b' in resposta:
             pontos += 10
             print(acerto)
@@ -54,7 +54,7 @@ if comando1 == 1:
 
         print()
         print('Pergunta 4: Quem descobriu o Brasil?\na) Cristóvão Colombo\nb) Pedro Álvares Cabral\nc) Vasco da Gama')
-        resposta = str(input('Resposta: ')).lower()
+        resposta = str(input('Resposta: ')).lower().strip()
         if 'b' in resposta:
             pontos += 10
             print(acerto)
@@ -63,7 +63,7 @@ if comando1 == 1:
 
         print()
         print('Pergunta 5: Qual é a cor do céu em um dia claro?\na) Azul\nb) Verde\nc) Vermelho')
-        resposta = str(input('Resposta: ')).lower()
+        resposta = str(input('Resposta: ')).lower().strip()
         if 'a' in resposta:
             pontos += 10
             print(acerto)
@@ -71,30 +71,32 @@ if comando1 == 1:
             print(erro)
     if nivel == 2:
         print ()
-        print ('Pergunta 1: Quem pintou a monalisa?\na) Van Gogh \nb) Leonardo da Vinci \nc) Picasso')
-        resposta = str(input('Resposta: ')).lower()
+        print ('Pergunta 1: Quem pintou a Monalisa?\na) Van Gogh \nb) Leonardo da Vinci \nc) Picasso')
+        resposta = str(input('Resposta: ')).lower().strip()
         if resposta == 'b':
             pontos += 10
-            print (acerto)
+            print(acerto)
         else:
             print(erro)
         print()
         print('Pergunta 2: Qual a fórmula da água?\na) CO2 \nb) H2O \nc) O2')
-        resposta = str(input('Resposta: ')).lower()
+        resposta = str(input('Resposta: ')).lower().strip()
         if resposta == 'b':
             pontos += 10
+            print(acerto)
         else:
             print(erro)
         print()
-        print ('Pergunta 3: Qual é o maior oceano do planeta terra? \na) Atlântico \nb) Índico \nc) Pacífico')
-        resposta = str(input('Resposta: ')).lower()
+        print ('Pergunta 3: Qual é o maior oceano do planeta Terra? \na) Atlântico \nb) Índico \nc) Pacífico')
+        resposta = str(input('Resposta: ')).lower().strip()
         if resposta == 'c':
             pontos += 10
             print (acerto)
         else:
             print(erro)
+        print()
         print('Pergunta 4: Qual o maior país do mundo? \na) Rússia \nb) EUA \nc) China')
-        resposta = str(input('Resposta: ')).lower()
+        resposta = str(input('Resposta: ')).lower().strip()
         if resposta == 'a':
             pontos += 10
             print (acerto)
@@ -102,17 +104,16 @@ if comando1 == 1:
             print(erro)
         print ()
         print('Pergunta 5: Quem desenvolveu a teoria da relatividade? \na) Newton \nb) Einstein \nc) Tesla')
-        reposta = str(input('Resposta: ')).lower()
+        reposta = str(input('Resposta: ')).lower().strip()
         if reposta == 'b':
             pontos += 10
             print (acerto)
         else:
             print(erro)
-        print ()
     if nivel == 3:
         print ()
         print ('Pergunta 1: Qual o elemento químico mais abundante no universo? \na) Oxigênio \nb) Hidrogênio \nc) Carbono')
-        resposta = str(input('Resposta: ')).lower()
+        resposta = str(input('Resposta: ')).lower().strip()
         if resposta == 'b':
             pontos += 10
             print (acerto)
@@ -120,7 +121,7 @@ if comando1 == 1:
             print(erro)
         print ()
         print ('Pergunta 2: Em que ano ocorreu a queda do muro de Berlim? \na) 1989 \nb) 1991 \nc) 1985')
-        resposta = str(input('Resposta: ')).lower()
+        resposta = str(input('Resposta: ')).lower().strip()
         if resposta == 'a':
             pontos += 10
             print (acerto)
@@ -128,7 +129,7 @@ if comando1 == 1:
             print(erro)
         print ()
         print ('Pergunta 3: Qual o maior osso do corpo humano? \na) Tíbia \nb) Úmero \nc) Fêmur')
-        resposta = str(input('Resposta: ')).lower()
+        resposta = str(input('Resposta: ')).lower().strip()
         if resposta == 'c':
             pontos += 10
             print (acerto)
@@ -136,15 +137,15 @@ if comando1 == 1:
             print(erro)
         print ()
         print ('Pergunta 4: Qual cientista descobriu a gravidade? \na) Galileu \nb) Newton \nc) Kepler')
-        resposta = str(input('Resposta: ')).lower()
+        resposta = str(input('Resposta: ')).lower().strip()
         if resposta == 'b':
             pontos += 10
             print (acerto)
         else:
             print(erro)
         print ()
-        print('Pergunta 5: Qual o nome do processo de divisão celular que formam os gametas: \na) Mitose \nb) Meiose \nc) Fissão')
-        resposta = str(input('Resposta: ')).lower()
+        print('Pergunta 5: Qual o nome do processo de divisão celular que forma os gametas? \na) Mitose \nb) Meiose \nc) Fissão')
+        resposta = str(input('Resposta: ')).lower().strip()
         if resposta == 'b':
             pontos += 10
             print (acerto)
