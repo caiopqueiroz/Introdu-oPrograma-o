@@ -1,3 +1,6 @@
+# Caio Queiroz - Matrícula 7466
+# Pedro Hashimoto - Matrícula 7467
+
 # regras:
 # não usar estruturas de repetição
 
