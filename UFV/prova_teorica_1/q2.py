@@ -1,4 +1,6 @@
 # temperatura
+
+
 temperatura = int(input('Temperatura interna do equipamento: '))
 if temperatura < 0:
     mensagem = 'RISCO DE CONGELAMENTO'
