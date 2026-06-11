@@ -27,13 +27,14 @@
 
 def novo_atendimento():
     dados = list()
-    print('\nNovo atendimento:\n')
+    print('\nNovo atendimento:')
     nome = str(input('Nome do animal: ')).strip().title()
     especie = str(input('Espécie: ')).strip().title()
     print('1 ) Banho e tosa\n2 ) Consulta de rotina\n3 ) Hospedagem')
     servico = int(input('Serviço: '))
     valor_total = float(input('Valor total: R$'))
     status = str(input('Status do atendimento: ')).strip()
+    print('\n\033[32mNovo atendimento cadastrado com sucesso\033[m')
     dados.extend([nome, especie, servico, valor_total, status])
     return dados
 
@@ -41,11 +42,10 @@ def novo_atendimento():
 # variáveis
 comando = 0
 #atendimentos = list()
-atendimentos = [['Lubil']]
+atendimentos = [['Lubil', 'Gato', 1, 10, 'em atendimento']]
 
-print('Bem-vindo(a)')
 while True:
-    print('\n1 ) Registrar um novo atendimento\n2 ) Buscar pelo nome de um animal\n3 ) Verificar relatório geral do PetShop')
+    print('\nEscolha uma opção abaixo:\n1 ) Registrar um novo atendimento\n2 ) Buscar pelo nome de um animal\n3 ) Verificar relatório geral do PetShop')
     while comando not in [1, 2, 3, 9]:
         comando = int(input('Opção: '))
     if comando == 1:
@@ -59,22 +59,32 @@ while True:
             for elemento in ficha:
                 if elemento == busca_nome:
                     atendimentos_busca.append(ficha[:])
-        print('    2.1 ) Verificar todos os seus atendimentos\n    2.2 ) Atualizar status de um atendimento')
-        comando2 = int(input('    Opção: '))
         if len(atendimentos_busca) == 0:
-            print('Esse animal não tem nenhum cadastro')
+            print('\n    Esse animal não tem nenhum cadastro')
         else:
-            print('Esse animal tem cadastro(s)!')
+            print('\n    Esse animal tem cadastro(s)!')
+            print('    2.1 ) Verificar todos os seus atendimentos\n    2.2 ) Atualizar status de um atendimento')
+            comando2 = int(input('    Opção: '))
             if comando2 == 1:
                 for ficha in atendimentos_busca:
-                    print(ficha)
+                    print('\n    ', end='')
+                    for elemento in ficha:
+                        print(elemento, end=' | ')
+                print()
             if comando2 == 2:
                 contador = 1
                 for ficha in atendimentos_busca:
-                    print(contador, end=' ) ')
-                    print(ficha)
+                    print(f'\n    {contador}', end=' ) ')
+                    for elemento in ficha:
+                        print(elemento, end=' | ')
                     contador += 1
-                comando3 = int(input('Qual atendimento você deseja alterar o status? '))
+                comando3 = int(input('\n    Qual atendimento você deseja alterar o status? '))
+                contador2 = 1
+                for ficha in atendimentos_busca:
+                    if contador2 == comando3:
+                        ficha[4] = str(input(f'\n    Novo status do atendimento {contador2}: '))
+                    contador2 += 1
+                print('\n    \033[32mAtendimento atualizado com sucesso!\033[m')
         comando = 0
     if comando == 9:
         break
