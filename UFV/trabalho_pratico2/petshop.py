@@ -41,8 +41,8 @@ def novo_atendimento():
 
 # variáveis
 comando = 0
-#atendimentos = list()
-atendimentos = [['Lubil', 'Gato', 1, 10, 'em atendimento']]
+atendimentos = list()
+#atendimentos = [['Lubil', 'Gato', 1, 10, 'em atendimento']]
 
 while True:
     print('\nEscolha uma opção abaixo:\n1 ) Registrar um novo atendimento\n2 ) Buscar pelo nome de um animal\n3 ) Verificar relatório geral do PetShop')
@@ -72,19 +72,24 @@ while True:
                         print(elemento, end=' | ')
                 print()
             if comando2 == 2:
-                contador = 1
+                numero_atendimento = 1
                 for ficha in atendimentos_busca:
-                    print(f'\n    {contador}', end=' ) ')
+                    print(f'\n    {numero_atendimento}', end=' ) ')
                     for elemento in ficha:
                         print(elemento, end=' | ')
-                    contador += 1
+                    numero_atendimento += 1
                 comando3 = int(input('\n    Qual atendimento você deseja alterar o status? '))
-                contador2 = 1
-                for ficha in atendimentos_busca:
-                    if contador2 == comando3:
-                        ficha[4] = str(input(f'\n    Novo status do atendimento {contador2}: '))
-                    contador2 += 1
+                numero_atendimento = 0
+                for ficha in atendimentos:
+                    for elemento in ficha:
+                        if elemento == busca_nome:
+                            numero_atendimento += 1
+                            if numero_atendimento == comando3:
+                                ficha[4] = str(input(f'\n    Novo status do atendimento {numero_atendimento}: '))
                 print('\n    \033[32mAtendimento atualizado com sucesso!\033[m')
+        comando = 0
+    if comando == 3:
+        pass
         comando = 0
     if comando == 9:
         break
