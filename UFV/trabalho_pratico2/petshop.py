@@ -41,8 +41,8 @@ def novo_atendimento():
 
 # variáveis
 comando = 0
-atendimentos = list()
-#atendimentos = [['Lubil', 'Gato', 1, 10, 'em atendimento']]
+#atendimentos = list()
+atendimentos = [['Lubil', 'Gato', 1, 10, 'em atendimento']]
 
 while True:
     print('\nEscolha uma opção abaixo:\n1 ) Registrar um novo atendimento\n2 ) Buscar pelo nome de um animal\n3 ) Verificar relatório geral do PetShop')
@@ -63,22 +63,15 @@ while True:
             print('\n    Esse animal não tem nenhum cadastro')
         else:
             print('\n    Esse animal tem cadastro(s)!')
-            print('    2.1 ) Verificar todos os seus atendimentos\n    2.2 ) Atualizar status de um atendimento')
-            comando2 = int(input('    Opção: '))
-            if comando2 == 1:
-                for ficha in atendimentos_busca:
-                    print('\n    ', end='')
-                    for elemento in ficha:
-                        print(elemento, end=' | ')
-                print()
-            if comando2 == 2:
-                numero_atendimento = 1
-                for ficha in atendimentos_busca:
-                    print(f'\n    {numero_atendimento}', end=' ) ')
-                    for elemento in ficha:
-                        print(elemento, end=' | ')
-                    numero_atendimento += 1
-                comando3 = int(input('\n    Qual atendimento você deseja alterar o status? '))
+            numero_atendimento = 1
+            for ficha in atendimentos_busca:
+                print(f'\n    {numero_atendimento}', end=' ) ')
+                for elemento in ficha:
+                    print(elemento, end=' | ')
+                numero_atendimento += 1
+            print('\n\n    Digite o número do atendimento para alterá-lo\n    Digite 0 para não alterar nenhum')
+            comando3 = int(input('    Deseja alterar o status de algum atendimento? '))
+            if comando3 != 0:
                 numero_atendimento = 0
                 for ficha in atendimentos:
                     for elemento in ficha:
@@ -87,6 +80,8 @@ while True:
                             if numero_atendimento == comando3:
                                 ficha[4] = str(input(f'\n    Novo status do atendimento {numero_atendimento}: '))
                 print('\n    \033[32mAtendimento atualizado com sucesso!\033[m')
+            else:
+                pass
         comando = 0
     if comando == 3:
         pass
