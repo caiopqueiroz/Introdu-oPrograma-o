@@ -70,7 +70,7 @@ while True:
                     print(elemento, end=' | ')
                 numero_atendimento += 1
             print('\n\n    Digite o número do atendimento para alterá-lo\n    Digite 0 para não alterar nenhum')
-            comando3 = int(input('    Deseja alterar o status de algum atendimento? '))
+            comando3 = int(input('    Qual atendimento você deseja alterar o status? '))
             if comando3 != 0:
                 numero_atendimento = 0
                 for ficha in atendimentos:
