@@ -36,12 +36,12 @@ def novo_atendimento():
         print('\033[31;1mServiço inválido\033[m')
         servico = int(input('Serviço: '))
     valor_total = float(input('Valor total: R$'))
-    print('1 ) Em atendimento\n2 ) Agendado\n3 ) Concluído\n4 ) Cancelado')
+    print('1 ) \033[33;1mEm atendimento\033[m\n2 ) \033[34;1mAgendado\033[m\n3 ) \033[32;1mConcluído\033[m\n4 ) \033[31;1mCancelado\033[m')
     status = int(input('Status do atendimento: '))
     while status not in [1, 2, 3, 4]:
         print('\033[31;1mStatus inválido\033[m')
         status = int(input('Status do atendimento: '))
-    print('\n\033[32;1mNovo atendimento cadastrado com sucesso\033[m')
+    print('\n\033[32;1mNovo atendimento cadastrado com sucesso!\033[m')
     for opcao in range(1, 5):
         if opcao == servico:
             if servico == 1:
@@ -52,13 +52,13 @@ def novo_atendimento():
                 servico = 'Hospedagem'
         if opcao == status:
             if status == 1:
-                status = 'Em atendimento'
+                status = '\033[33;1mEm atendimento\033[m'
             elif status == 2:
-                status = 'Agendado'
+                status = '\033[34;1mAgendado\033[m'
             elif status == 3:
-                status = 'Concluído'
+                status = '\033[32;1mConcluído\033[m'
             else:
-                status = 'Cancelado'
+                status = '\033[31;1mCancelado\033[m'
     dados.extend([nome, especie, servico, valor_total, status])
     return dados
 
@@ -67,11 +67,14 @@ def novo_atendimento():
 comando = 0
 total_atendimentos = 0
 atendimentos = list()
-#atendimentos = [['Lubil', 'Gato', 1, 10, 'em atendimento']]
 
+
+print('\033[34;1m--- Sistema Petshop ---\033[m', end='')
 while True:
-    print('\nEscolha uma opção abaixo:\n1 ) Registrar um novo atendimento\n2 ) Buscar pelo nome de um animal\n3 ) Verificar relatório geral do PetShop')
-    while comando not in [1, 2, 3, 9]:
+    print('\nEscolha uma opção abaixo:\n1 ) Registrar um novo atendimento\n2 ) Buscar pelo nome de um animal\n3 ) Verificar relatório geral do PetShop\n4 ) Sair')
+    comando = int(input('Opção: '))
+    while comando not in [1, 2, 3, 4]:
+        print('\033[31;1mOpção inválida\033[m')
         comando = int(input('Opção: '))
     if comando == 1:
         ficha = novo_atendimento()
@@ -91,7 +94,7 @@ while True:
             print('\n    Esse animal tem cadastro(s)!')
             numero_atendimento = 1
             for ficha in atendimentos_busca:
-                print(f'\n    {numero_atendimento}', end=' ) ')
+                print(f'\n    \033[34;1m{numero_atendimento}\033[m', end='\033[34;1m ) \033[m')
                 for elemento in ficha:
                     print(elemento, end=' | ')
                 numero_atendimento += 1
@@ -104,19 +107,19 @@ while True:
                         if elemento == busca_nome:
                             numero_atendimento += 1
                             if numero_atendimento == comando3:
-                                print('\n    1 ) Em atendimento\n    2 ) Agendado\n    3 ) Concluído\n    4 ) Cancelado')
+                                print('\n    1 ) \033[33;1mEm atendimento\033[m\n    2 ) \033[34;1mAgendado\033[m\n    3 ) \033[32;1mConcluído\033[m\n    4 ) \033[31;1mCancelado\033[m')
                                 status = int(input(f'    Novo status do atendimento {numero_atendimento}: '))
                                 while status not in [1, 2, 3, 4]:
                                     print('\033[31;1m    Status inválido\033[m')
                                     status = int(input(f'    Novo status do atendimento {numero_atendimento}: '))
                                 if status == 1:
-                                    status = 'Em atendimento'
+                                    status = '\033[33;1mEm atendimento\033[m'
                                 elif status == 2:
-                                    status = 'Agendado'
+                                    status = '\033[34;1mAgendado\033[m'
                                 elif status == 3:
-                                    status = 'Concluído'
+                                    status = '\033[32;1mConcluído\033[m'
                                 else:
-                                    status = 'Cancelado'
+                                    status = '\033[31;1mCancelado\033[m'
                                 ficha[4] = status
                 print('\n    \033[32;1mAtendimento atualizado com sucesso!\033[m')
             else:
@@ -126,18 +129,17 @@ while True:
         total_arrecadado = 0
         cancelados = 0
         for ficha in atendimentos:
-            if ficha[4] == 'Concluído':
+            if ficha[4] == '\033[33;1mConcluído\033[m':
                 total_arrecadado += ficha[3]
-            if ficha[4] == 'Cancelado':
+            if ficha[4] == '\033[31;1mCancelado\033[m':
                 cancelados += 1
         print('\n\033[34;1m--- Relatório Geral Petshop ---\033[m')
         print(f'Total de atendimentos registrados: {total_atendimentos}')
         print(f'Total de atendimentos cancelados: {cancelados}')
-        print(f'Total arrecadado com atendimentos concluidos: R${total_arrecadado:.2f}')
+        print(f'Total arrecadado com atendimentos concluídos: R${total_arrecadado:.2f}')
         comando = 0
-    if comando == 9:
+    if comando == 4:
         break
-    
-#   
+   
 
     
