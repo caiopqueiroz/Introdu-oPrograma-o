@@ -1,28 +1,10 @@
+# Caio Queiroz 7466 
+# Pedro Hashimoto 7467
+# Bernardo Mansur 
+
+
 # Desenvolver um sistema de controle de atendimentos de um PetShop
 
-# usuário (que é funcionário do petshop) vai preencher um cadastro:
-# nome do animal 
-# espécie
-# serviço contratado
-# valor total
-# status (agendado, em atendimento, concluído, cancelado) 
-
-# o que o programa deve fazer?
-# registrar um atendimento
-# verificar se o animal já está cadastrado e mudar o seu status
-# quando o status se tornar concluído, o atendimento estará finalizado
-# permitir uma busca pelo nome do animal e listar todos os atendimentos dele
-# deve ser possível checar um relatório geral, que mostra:
-# total de atendimentos
-# valor total arrecadado com atendimentos concluídos
-# quantidade de atendimentos cancelados
- 
-# opções:
-# 1 ) Registrar um novo atendimento
-# 2 ) Buscar pelo nome de um animal
-    # 2.1 ) Verificar todos os seus atendimentos
-    # 2.2 ) Atualizar status de um atendimento
-# 3 ) Verificar relatório geral do petshop
 
 # Função para criar um novo atendimento
 def novo_atendimento():
