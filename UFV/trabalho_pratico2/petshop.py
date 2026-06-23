@@ -14,13 +14,18 @@ def novo_atendimento():
     # Lendo os elementos da lista 
     nome = str(input('Nome do animal: ')).strip().title()
     especie = str(input('Espécie: ')).strip().title()
-    print('1 ) Banho e tosa\n2 ) Consulta de rotina\n3 ) Hospedagem')
+    print('1 ) Banho e tosa' \
+    '\n2 ) Consulta de rotina' \
+    '\n3 ) Hospedagem')
     servico = int(input('Serviço: '))
     while servico not in [1, 2, 3]:
         print('\033[31;1mServiço inválido\033[m')
         servico = int(input('Serviço: '))
     valor_total = float(input('Valor total: R$'))
-    print('1 ) \033[33;1mEm atendimento\033[m\n2 ) \033[34;1mAgendado\033[m\n3 ) \033[32;1mConcluído\033[m\n4 ) \033[31;1mCancelado\033[m')
+    print('1 ) \033[33;1mEm atendimento\033[m \
+          \n2 ) \033[34;1mAgendado\033[m \
+          \n3 ) \033[32;1mConcluído\033[m \
+          \n4 ) \033[31;1mCancelado\033[m')
     status = int(input('Status do atendimento: '))
     while status not in [1, 2, 3, 4]:
         print('\033[31;1mStatus inválido\033[m')
@@ -59,7 +64,11 @@ atendimentos = list()
 print('\033[34;1m--- Sistema Petshop ---\033[m', end='')
 # Criando o looping principal do algoritmo
 while True:
-    print('\nEscolha uma opção abaixo:\n1 ) Registrar um novo atendimento\n2 ) Buscar pelo nome de um animal\n3 ) Verificar relatório geral do PetShop\n4 ) Sair')
+    print('\nEscolha uma opção abaixo:' \
+    '\n1 ) Registrar um novo atendimento' \
+    '\n2 ) Buscar pelo nome de um animal' \
+    '\n3 ) Verificar relatório geral do PetShop' \
+    '\n4 ) Sair')
     comando = int(input('Opção: '))
     # Tratamento de erros: fazendo com que o usuário só consiga inserir uma das opções válidas
     while comando not in [1, 2, 3, 4]:
